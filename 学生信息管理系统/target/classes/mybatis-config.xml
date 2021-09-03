@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+ <configuration> 
+  	<settings>
+  	<!-- 一般情况下，数据的字段和我们前端的字段命名规则不一样，查询数据库的时候需要加一个映射，把数据库字段映射为驼峰式的字段，
+  	但是mybatis里有一个配置可以将这个转换自动化，这就是mapUnderscoreToCamelCase -->
+  		<setting name="mapUnderscoreToCamelCase" value="true"/>
+  	</settings>
+  	<typeAliases>
+  		<package name="com.crud.bean"/>
+  	</typeAliases>
+  	<plugins>
+  		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+  			<!-- 分页参数合理化 -->
+  			<property name="reasonable" value="true"/>
+  		</plugin>
+  	</plugins>
+  </configuration>   
+  
